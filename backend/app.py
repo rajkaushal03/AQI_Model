@@ -1,29 +1,24 @@
-from flask import Flask,jsonify  # type: ignore
-from flask_sqlalchemy import SQLAlchemy  # type: ignore
+from flask import Flask,jsonify, send_from_directory  # type: ignore
 from flask_cors import CORS  # type: ignore
+import os 
 
 app = Flask(__name__)
 CORS(app)
 
-# SQLite database setup
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///aqi_data.db"
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+frontend_folder = os.path.join(os.getcwd(),"..","frontend")
+dist_folder = os.path.join(frontend_folder,"dist")
 
-# Initialize database
-db = SQLAlchemy(app)
-
-# import routes  # Import routes after db setup
-
-# Create the database and the table
-with app.app_context():
-    db.create_all()
+@app.route("/",defaults={"filename":""})
+@app.route("/<path:filename>")
+def index(filename):
+  if not filename:
+    filename = "index.html"
+  return send_from_directory(dist_folder,filename)
 
 import routes
 
 
-@app.route("/", methods=["GET"])
-def home():
-    return jsonify({ })
+
 
 if __name__ == "__main__":
     app.run(debug=True)

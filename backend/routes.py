@@ -1,4 +1,4 @@
-from app import app, db
+from app import app
 from flask import request, jsonify  # type: ignore
 import json
 import requests
