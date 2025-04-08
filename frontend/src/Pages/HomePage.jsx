@@ -1,13 +1,11 @@
-import NavBar from '../Component/navbar'
-import FinalEarth from '../earth/FinalEarth'
-import CityCard from './CityCard'
-import AQIDashboard from './AQIDashboard'
-import FormSection from './FormSection'
+import React from 'react'
 
 const HomePage = () => {
-    return (
-       
-    )
+  return (
+    <div>
+      
+    </div>
+  )
 }
 
-export default HomePage;
+export default HomePage
