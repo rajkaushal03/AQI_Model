@@ -5,9 +5,7 @@ import App from './App.jsx'
 import { AQIContextProvider } from './context/AQIContext'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
     <AQIContextProvider>
     <App />
     </AQIContextProvider>
-  </StrictMode>,
 )

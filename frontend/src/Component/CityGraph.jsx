@@ -33,7 +33,7 @@ const CityGraph = ({ city }) => {
           {city.yearly["2025"]} AQI
         </p>
         <p>
-          Temp: {city.temperature.slice(0, 3)}°C | Humidity: {city.humidity}%
+          Temp: {city.temperature}°C | Humidity: {city.humidity}%
         </p>
         <div className="mt-2 h-72">
           <Bar data={data} options={{ responsive: true, maintainAspectRatio: false }} />
