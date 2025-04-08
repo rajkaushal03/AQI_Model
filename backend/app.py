@@ -2,17 +2,6 @@ from flask import Flask,jsonify  # type: ignore
 from flask_sqlalchemy import SQLAlchemy  # type: ignore
 from flask_cors import CORS  # type: ignore
 
-from serpapi import GoogleSearch
-
-params = {
-  "q": "Aqi of delhi ",
-  "api_key": "ef2ff1c12e3633aa5b21dbe8bbbb0eafd475ba11f62bb2500795a6e417c5ec7c"
-}
-
-search = GoogleSearch(params)
-results = search.get_dict()
-
-
 app = Flask(__name__)
 CORS(app)
 
@@ -34,7 +23,7 @@ import routes
 
 @app.route("/", methods=["GET"])
 def home():
-    return jsonify(results)
+    return jsonify({ })
 
 if __name__ == "__main__":
     app.run(debug=True)

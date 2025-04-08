@@ -6,6 +6,7 @@ import React from "react";
 const CityCard = () => {
 
   const { citiesCard } = useAQIContext();
+  console.log(citiesCard);
 
   return (
     <div className="  flex items-center justify-center p-6">

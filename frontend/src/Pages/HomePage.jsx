@@ -2,7 +2,7 @@ import NavBar from '../Component/navbar'
 import FinalEarth from '../earth/FinalEarth'
 import CityCard from './CityCard'
 import AQIDashboard from './AQIDashboard'
-import FormSection from '../Component/FormSection'
+import FormSection from './FormSection'
 
 const HomePage = () => {
     return (
@@ -16,8 +16,8 @@ const HomePage = () => {
                 </div>
                 <FinalEarth />
             </div>
-            <CityCard />
-            <div className='bg-neutral flex justify-around items-center p-8'>
+            {/* <CityCard /> */}
+            <div className=' flex justify-around items-center p-8'>
                 <FormSection />
                 <AQIDashboard />
             </div>

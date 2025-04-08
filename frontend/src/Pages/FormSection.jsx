@@ -1,7 +1,14 @@
-import React, { useState } from "react";
+import { useAQIContext } from "@/context/AQIContext";
 
 function FormSection() {
-  const [loading, setLoading] = useState(false);
+
+  const { setCity,loading,setLoading } = useAQIContext();
+
+
+  // useEffect(() => {
+  //   handleSubmit("delhi");
+  // }, [])
+
   const handleSubmit = async (e) => {
 
     e.preventDefault();
@@ -10,6 +17,7 @@ function FormSection() {
     try {
       const response = await fetch(`/aqi/${e.target.city.value}`);
       const data = await response.json();
+      setCity(data);
       console.log("AQI Response:", data);
     } catch (error) {
       console.error("Error fetching AQI:", error);
@@ -24,8 +32,8 @@ function FormSection() {
 
       <div className="font-bold text-accent text-3xl">Check Air Quality in Your City...</div>
       <p className="">
-  Enter your city name below to check the current Air Quality Index (AQI). Knowing your city's air quality helps you make better decisions for your health, whether you're planning to go for a jog, commute, or simply step outside. Stay aware, stay protected.
-</p>
+        Enter your city name below to check the current Air Quality Index (AQI). Knowing your city's air quality helps you make better decisions for your health, whether you're planning to go for a jog, commute, or simply step outside. Stay aware, stay protected.
+      </p>
       <em className="text-error">“Breathe safe, stay informed — know your city’s air before you step out.”</em>
       <form
         onSubmit={handleSubmit}
