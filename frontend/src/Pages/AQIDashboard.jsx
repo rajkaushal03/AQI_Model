@@ -18,8 +18,8 @@ const AQIDashboard = () => {
   // ];
 
   return (
-    <div className="flex flex-wrap justify-center gap-6 p-6 w-1/2">
-      {!loading ? <CityGraph city={city} /> : <div className="bg-gray-800 p-4 rounded-lg w-3/5 shadow-lg">
+    <div className="flex flex-wrap md:justify-center gap-6 lg:p-6  p-2 w-full md:w-[75%] lg:w-1/2 ">
+      {!loading ? <CityGraph city={city} /> : <div className="bg-gray-800 p-4 rounded-lg md:w-3/5 w-full shadow-lg">
         <div className="skeleton h-6 w-3/4 mb-4"></div>
         <div className="skeleton h-8 w-1/2 mb-2"></div>
         <div className="skeleton h-4 w-3/5 mb-4"></div>

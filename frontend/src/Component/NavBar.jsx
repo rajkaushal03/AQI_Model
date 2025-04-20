@@ -11,36 +11,39 @@ const NavBar = () => {
                     <ul
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        <li><a>Item 1</a></li>
+                        <li><a>Github</a></li>
                         <li>
-                            <a>Parent</a>
+                            <a>Member</a>
                             <ul className="p-2">
-                                <li><a>Submenu 1</a></li>
-                                <li><a>Submenu 2</a></li>
+                                <li><a>Harshvardhan </a></li>
+                                <li><a>Vaibhav</a></li>
+                                <li><a>Swayam</a></li>
                             </ul>
                         </li>
                         <li><a>Item 3</a></li>
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">daisyUI</a>
+                <a className="btn btn-ghost text-xl">Fuzzy AQI</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                    <li><a>Item 1</a></li>
+                    <li><a>Github</a></li>
+                    <li><a>Refrences</a></li>
                     <li>
                         <details>
-                            <summary>Parent</summary>
+                            <summary>Members</summary>
                             <ul className="p-2">
-                                <li><a>Submenu 1</a></li>
-                                <li><a>Submenu 2</a></li>
+                                <li><a>Harshvardhan </a></li>
+                                <li><a>Vaibhav</a></li>
+                                <li><a>Swayam</a></li>
                             </ul>
                         </details>
                     </li>
-                    <li><a>Item 3</a></li>
+                    
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Button</a>
+                <a className="btn" href='https://swayam-three.vercel.app/contact' target='_blank'>Contact</a>
             </div>
         </div>
     )

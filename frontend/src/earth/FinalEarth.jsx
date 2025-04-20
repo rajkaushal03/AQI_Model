@@ -11,7 +11,7 @@ function Earth() {
   const ref = useRef();
 
   useFrame(() => {
-    ref.current.rotation.y += 0.01;
+    // ref.current.rotation.y += 0.01;
   });
 
   useEffect(() => {
@@ -34,7 +34,7 @@ function Earth() {
 
 function FinalEarth() {
   return (
-    <div className="xl:px-6 w-[85vh] h-[65vh] ">
+    <div className="xl:px-6  p-6 sm:p-2 absolute opacity-[50%] sm:opacity-[100%] sm:static z-1  2xl:w-[85vh] 2xl:h-[65vh] ">
 
       <Canvas 
         camera={{ position: [0, 1.5, 4] }} 

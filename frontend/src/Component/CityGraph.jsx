@@ -26,16 +26,16 @@ const CityGraph = ({ city }) => {
   };
 
   return (
-    <Card className="bg-gray-900 text-white p-4 rounded-lg shadow-lg w-3/5">
+    <Card className="bg-gray-900 text-white p-4 rounded-lg shadow-lg md:w-[75%] w-[100%]  lg:w-3/5">
       <CardContent>
         <h2 className="text-xl font-bold">{city.city}</h2>
         <p className="text-3xl font-semibold text-yellow-400">
-          {city.yearly["2025"]} AQI
-        </p>
+          {city.yearly["2025"]} AQI 
+        </p><span className={`${city.yearly["2025"] >100 ? "text-success" : "text-warning"}`}>{city.yearly["2025"] >100 ? "safe" : "deadly"}</span>
         <p>
-          Temp: {city.temperature}°C | Humidity: {city.humidity}%
+          Temp: {city.temperature.slice(0,2)}°C | Humidity: {city.humidity}%
         </p>
-        <div className="mt-2 h-72">
+        <div className="mt-2 md:h-52 h-60 lg:h-60">
           <Bar data={data} options={{ responsive: true, maintainAspectRatio: false }} />
         </div>
       </CardContent>

@@ -28,13 +28,13 @@ function FormSection() {
   };
 
   return (
-    <div className="p-8 flex flex-col  gap-4 leading-loose w-1/2 ">
+    <div className="md:p-2 lg:p-8 flex flex-col  gap-4 leading-loose md:w-1/2 ">
 
-      <div className="font-bold text-accent text-3xl">Check Air Quality in Your City...</div>
-      <p className="">
+      <div className="font-bold text-accent text-lg md:text-xl xl:text-3xl">Check Air Quality in Your City...</div>
+      <p className="md:text-sm text-xs">
         Enter your city name below to check the current Air Quality Index (AQI). Knowing your city's air quality helps you make better decisions for your health, whether you're planning to go for a jog, commute, or simply step outside. Stay aware, stay protected.
       </p>
-      <em className="text-error">“Breathe safe, stay informed — know your city’s air before you step out.”</em>
+      <em className="text-error md:text-sm text-xs">“Breathe safe, stay informed — know your city’s air before you step out.”</em>
       <form
         onSubmit={handleSubmit}
         className="w-full flex flex-col sm:flex-row gap-4 "
