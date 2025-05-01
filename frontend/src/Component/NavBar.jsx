@@ -11,39 +11,40 @@ const NavBar = () => {
                     <ul
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        <li><a>Github</a></li>
+                        <li><a href='https://github.com/rajkaushal03/AQI_Model'>Github</a></li>
+                        <li><a href=''>Refrences</a></li>
                         <li>
                             <a>Member</a>
                             <ul className="p-2">
-                                <li><a>Harshvardhan </a></li>
-                                <li><a>Vaibhav</a></li>
-                                <li><a>Swayam</a></li>
+                                <li><a href='https://www.linkedin.com/in/dataexpertharsh/'>Harshvardhan </a></li>
+                                <li><a href='https://www.linkedin.com/in/vaibhav-arya-717853202/'>Vaibhav</a></li>
+                                <li><a href='https://www.linkedin.com/in/swayamkaushal/'>Swayam</a></li>
                             </ul>
                         </li>
                         <li><a>Item 3</a></li>
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">Fuzzy AQI</a>
+                <a className="font-bold uppercase px-3 text-xl cursor-pointer" onClick={() => window.location.reload()}>Fuzzy AQI</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                    <li><a>Github</a></li>
-                    <li><a>Refrences</a></li>
+                    <li><a href='https://github.com/rajkaushal03/AQI_Model'>Github</a></li>
+                    <li><a href=''>Refrences</a></li>
                     <li>
                         <details>
                             <summary>Members</summary>
                             <ul className="p-2">
-                                <li><a>Harshvardhan </a></li>
-                                <li><a>Vaibhav</a></li>
-                                <li><a>Swayam</a></li>
+                                <li><a href='https://www.linkedin.com/in/dataexpertharsh/'>Harshvardhan </a></li>
+                                <li><a href='https://www.linkedin.com/in/vaibhav-arya-717853202/'>Vaibhav</a></li>
+                                <li><a href='https://www.linkedin.com/in/swayamkaushal/'>Swayam</a></li>
                             </ul>
                         </details>
                     </li>
-                    
+
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn" href='https://swayam-three.vercel.app/contact' target='_blank'>Contact</a>
+                <a className="btn bg-accent text-black" href='https://swayam-three.vercel.app/contact' target='_blank'>Connect with us...</a>
             </div>
         </div>
     )

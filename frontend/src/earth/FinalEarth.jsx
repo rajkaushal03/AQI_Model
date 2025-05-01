@@ -11,7 +11,7 @@ function Earth() {
   const ref = useRef();
 
   useFrame(() => {
-    // ref.current.rotation.y += 0.01;
+    ref.current.rotation.y += 0.01;
   });
 
   useEffect(() => {

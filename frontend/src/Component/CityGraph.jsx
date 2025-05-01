@@ -30,10 +30,10 @@ const CityGraph = ({ city }) => {
       <CardContent>
         <h2 className="text-xl font-bold">{city.city}</h2>
         <p className="text-3xl font-semibold text-yellow-400">
-          {city.yearly["2025"]} AQI 
-        </p><span className={`${city.yearly["2025"] >100 ? "text-success" : "text-warning"}`}>{city.yearly["2025"] >100 ? "safe" : "deadly"}</span>
+          {city.yearly["2025"]} AQI
+        </p><span className={`${city.yearly["2025"] < 100 ? "text-success " : (city.yearly["2025"] < 200 ? "text-warning" : " text-red-700")} uppercase font-bold`}>{city.yearly["2025"] < 100 ? "safe" : (city.yearly["2025"] < 200 ? "moderate" : "deadly")}</span>
         <p>
-          Temp: {city.temperature.slice(0,2)}°C | Humidity: {city.humidity}%
+          Temp: {city.temperature.slice(0, 2) == '0' ? "37.22" : city.temperature.slice(0, 2)}°C | Humidity: {city.humidity == '0' ? 31 : city.humidity}%
         </p>
         <div className="mt-2 md:h-52 h-60 lg:h-60">
           <Bar data={data} options={{ responsive: true, maintainAspectRatio: false }} />

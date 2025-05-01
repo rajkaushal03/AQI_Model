@@ -1,8 +1,9 @@
 import { useAQIContext } from "@/context/AQIContext";
+import { useEffect } from "react";
 
 function FormSection() {
 
-  const { setCity,loading,setLoading } = useAQIContext();
+  const { setCity, loading, setLoading } = useAQIContext();
 
 
   // useEffect(() => {
@@ -26,6 +27,26 @@ function FormSection() {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    setLoading(true);
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`/aqi/delhi`);
+        const data = await response.json();
+        setCity(data);
+      console.log("AQI Response:", data);
+
+      } catch (error) {
+        console.error("Error fetching AQI:", error);
+      }
+      finally {
+        setLoading(false);
+      }
+    }
+    fetchData();
+    console.log("Fetching default city data...")
+  }, [])
 
   return (
     <div className="md:p-2 lg:p-8 flex flex-col  gap-4 leading-loose md:w-1/2 ">

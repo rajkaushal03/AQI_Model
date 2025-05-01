@@ -20,7 +20,7 @@ export const AQIContextProvider = ({ children }) => {
             "2022": 174,
             "2023": 164,
             "2024": 169,
-            "2025": 175
+            "2025": 300
         }
     });
     // const cityNames = [
