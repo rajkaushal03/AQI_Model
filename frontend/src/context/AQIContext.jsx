@@ -8,8 +8,10 @@ export const useAQIContext = () => {
 
 export const AQIContextProvider = ({ children }) => {
     const [loading, setLoading] = useState(false);
+    const [load, setLoad] = useState(false);
     const [cards, setCards] = useState([]);
-    const cities = ["Delhi", "jaipur", "Kanpur", "Mumbai", "Kolkata", "Lucknow"];
+    const cities = ["Delhi", "jaipur", "Kanpur", "Mumbai", "Kolkata", "Lucknow", "bengaluru",
+        "ahmedabad","agra"];
     const [city, setCity] = useState({});
 
     const fetchData = async (city) => {
@@ -24,9 +26,10 @@ export const AQIContextProvider = ({ children }) => {
     };
 
     useEffect(() => {
+        setLoad(false);
         FetchCards();
     }, []);
-    
+
     const FetchCards = async () => {
         try {
             const results = await Promise.all(cities.map(city => fetchData(city)));
@@ -34,11 +37,14 @@ export const AQIContextProvider = ({ children }) => {
             setCards(filteredResults);
         } catch (error) {
             console.log("Error fetching cards:", error.message);
-        } 
+        }
+        finally {
+            setLoad(true);
+        }
     };
-    
+
     return (
-        <AQIContext.Provider value={{city,setCity, cards, loading, setLoading}}>
+        <AQIContext.Provider value={{ city, setCity, cards, loading, setLoading, load }}>
             {children}
         </AQIContext.Provider>
     );

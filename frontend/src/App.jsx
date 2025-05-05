@@ -2,15 +2,15 @@ import React from 'react'
 import NavBar from './Component/NavBar'
 import FinalEarth from './earth/FinalEarth'
 import FormSection from './Section/FormSection'
-import AQICard from './Component/AQICard'
 import CityCard from './Section/CityCard'
 import { useAQIContext } from './context/AQIContext'
+import CityGraph from './Component/CityGraph'
 
 const App = () => {
-  const { city} = useAQIContext(); // Assuming you have a context to get the city data
+  const { city,loading} = useAQIContext(); // Assuming you have a context to get the city data
   return (
     <>
-      <div className="">
+      <div className=" bg-black">
         <NavBar />
         <div className="flex justify-around  items-center xl:gap-54 p-4 md:p-8 bg-neutral  ">
           <div className='z-2 flex flex-col md:p-4 gap-5 xl:gap-10 justify-center items-start '>
@@ -23,7 +23,8 @@ const App = () => {
         <CityCard />
         <div className=' flex md:flex-row flex-col gap-4 md:justify-between md:items-center p-4  lg:p-8 bg-neutral'>
           <FormSection />
-          <AQICard city={city}/>
+          {!loading ? <CityGraph city={city}  /> : <div className="skeleton h-96 w-1/3"></div>}
+          
         </div>
       </div>
     </>

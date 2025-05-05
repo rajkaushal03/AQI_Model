@@ -12,7 +12,7 @@ const NavBar = () => {
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                         <li><a href='https://github.com/rajkaushal03/AQI_Model'>Github</a></li>
-                        <li><a href=''>Refrences</a></li>
+
                         <li>
                             <a>Member</a>
                             <ul className="p-2">
@@ -29,7 +29,7 @@ const NavBar = () => {
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     <li><a href='https://github.com/rajkaushal03/AQI_Model'>Github</a></li>
-                    <li><a href=''>Refrences</a></li>
+
                     <li>
                         <details>
                             <summary>Members</summary>
