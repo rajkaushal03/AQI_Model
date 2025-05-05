@@ -1,10 +1,13 @@
 import React from 'react'
 import NavBar from './Component/NavBar'
 import FinalEarth from './earth/FinalEarth'
-import FormSection from './Pages/FormSection'
-import AQIDashboard from './Pages/AQIDashboard'
+import FormSection from './Section/FormSection'
+import AQICard from './Component/AQICard'
+import CityCard from './Section/CityCard'
+import { useAQIContext } from './context/AQIContext'
 
 const App = () => {
+  const { city} = useAQIContext(); // Assuming you have a context to get the city data
   return (
     <>
       <div className="">
@@ -17,10 +20,10 @@ const App = () => {
           </div>
           <FinalEarth />
         </div>
-        {/* <CityCard /> */}
-        <div className=' flex md:flex-row flex-col gap-4 md:justify-around md:items-center p-4  lg:p-8'>
+        <CityCard />
+        <div className=' flex md:flex-row flex-col gap-4 md:justify-between md:items-center p-4  lg:p-8 bg-neutral'>
           <FormSection />
-          <AQIDashboard />
+          <AQICard city={city}/>
         </div>
       </div>
     </>

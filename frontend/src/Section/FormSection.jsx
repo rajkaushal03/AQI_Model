@@ -16,10 +16,9 @@ function FormSection() {
     setLoading(true);
 
     try {
-      const response = await fetch(`/aqi/${e.target.city.value}`);
+      const response = await fetch(`/details/${e.target.city.value}`);
       const data = await response.json();
       setCity(data);
-      console.log("AQI Response:", data);
     } catch (error) {
       console.error("Error fetching AQI:", error);
     }
@@ -32,10 +31,9 @@ function FormSection() {
     setLoading(true);
     const fetchData = async () => {
       try {
-        const response = await fetch(`/aqi/delhi`);
+        const response = await fetch(`/details/patna`);
         const data = await response.json();
         setCity(data);
-      console.log("AQI Response:", data);
 
       } catch (error) {
         console.error("Error fetching AQI:", error);

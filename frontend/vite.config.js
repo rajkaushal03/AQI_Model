@@ -9,8 +9,8 @@ export default defineConfig({
   server: {
     port: 3000,
     proxy: {
-      "/aqi": {
-        target: "http://localhost:5000",
+      "/details": {
+        target: "http://localhost:8000",
       },
     },
   },
