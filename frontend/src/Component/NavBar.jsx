@@ -24,7 +24,7 @@ const NavBar = () => {
                         <li><a>Item 3</a></li>
                     </ul>
                 </div>
-                <a className="font-bold uppercase px-3 text-xl cursor-pointer" onClick={() => window.location.reload()}>Fuzzy AQI</a>
+                <a className="font-bold uppercase sm:px-3 sm:text-xl text-xs  cursor-pointer" onClick={() => window.location.reload()}>Fuzzy AQI</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -44,7 +44,7 @@ const NavBar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn bg-accent text-black" href='https://swayam-three.vercel.app/contact' target='_blank'>Connect with us...</a>
+                <a className="btn bg-accent sm:btn-lg btn-xs text-black" href='https://swayam-three.vercel.app/contact' target='_blank'>Connect</a>
             </div>
         </div>
     )

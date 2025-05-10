@@ -47,7 +47,7 @@ function FormSection() {
   }, [])
 
   return (
-    <div className="md:p-2 p-0 flex flex-col  gap-4 leading-loose md:w-1/2 ">
+    <div className="md:p-2 p-0 flex flex-col  gap-4 leading-loose lg:w-1/2 ">
 
       <div className="font-bold text-accent text-lg md:text-xl xl:text-3xl">Check Air Quality in Your City...</div>
       <p className="md:text-sm text-xs">
